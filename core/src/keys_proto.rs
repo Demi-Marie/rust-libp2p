@@ -241,7 +241,7 @@ impl ::std::fmt::Debug for PublicKey {
 }
 
 impl ::protobuf::reflect::ProtobufValue for PublicKey {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
@@ -461,7 +461,7 @@ impl ::std::fmt::Debug for PrivateKey {
 }
 
 impl ::protobuf::reflect::ProtobufValue for PrivateKey {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
@@ -519,7 +519,7 @@ impl ::std::default::Default for KeyType {
 }
 
 impl ::protobuf::reflect::ProtobufValue for KeyType {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Enum(self.descriptor())
     }
 }

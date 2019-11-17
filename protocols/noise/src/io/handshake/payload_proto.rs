@@ -232,7 +232,7 @@ impl ::std::fmt::Debug for Identity {
 }
 
 impl ::protobuf::reflect::ProtobufValue for Identity {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }

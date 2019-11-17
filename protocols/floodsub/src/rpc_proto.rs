@@ -246,7 +246,7 @@ impl ::std::fmt::Debug for RPC {
 }
 
 impl ::protobuf::reflect::ProtobufValue for RPC {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
@@ -464,7 +464,7 @@ impl ::std::fmt::Debug for RPC_SubOpts {
 }
 
 impl ::protobuf::reflect::ProtobufValue for RPC_SubOpts {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
@@ -788,7 +788,7 @@ impl ::std::fmt::Debug for Message {
 }
 
 impl ::protobuf::reflect::ProtobufValue for Message {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
@@ -1081,7 +1081,7 @@ impl ::std::fmt::Debug for TopicDescriptor {
 }
 
 impl ::protobuf::reflect::ProtobufValue for TopicDescriptor {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
@@ -1284,7 +1284,7 @@ impl ::std::fmt::Debug for TopicDescriptor_AuthOpts {
 }
 
 impl ::protobuf::reflect::ProtobufValue for TopicDescriptor_AuthOpts {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
@@ -1342,7 +1342,7 @@ impl ::std::default::Default for TopicDescriptor_AuthOpts_AuthMode {
 }
 
 impl ::protobuf::reflect::ProtobufValue for TopicDescriptor_AuthOpts_AuthMode {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Enum(self.descriptor())
     }
 }
@@ -1545,7 +1545,7 @@ impl ::std::fmt::Debug for TopicDescriptor_EncOpts {
 }
 
 impl ::protobuf::reflect::ProtobufValue for TopicDescriptor_EncOpts {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
@@ -1603,7 +1603,7 @@ impl ::std::default::Default for TopicDescriptor_EncOpts_EncMode {
 }
 
 impl ::protobuf::reflect::ProtobufValue for TopicDescriptor_EncOpts_EncMode {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Enum(self.descriptor())
     }
 }

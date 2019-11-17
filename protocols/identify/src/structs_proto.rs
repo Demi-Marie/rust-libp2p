@@ -438,7 +438,7 @@ impl ::std::fmt::Debug for Identify {
 }
 
 impl ::protobuf::reflect::ProtobufValue for Identify {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }

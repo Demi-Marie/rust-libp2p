@@ -408,7 +408,7 @@ impl ::std::fmt::Debug for Propose {
 }
 
 impl ::protobuf::reflect::ProtobufValue for Propose {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
@@ -639,7 +639,7 @@ impl ::std::fmt::Debug for Exchange {
 }
 
 impl ::protobuf::reflect::ProtobufValue for Exchange {
-    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef<'_> {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
