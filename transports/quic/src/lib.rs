@@ -61,6 +61,8 @@ use std::{
     io::{self, Read, Write},
     iter::{self, FromIterator},
     net::{IpAddr, SocketAddr},
+    pin::Pin,
+    task::{Poll, Context},
     time::{Duration, Instant},
     vec::IntoIter,
 };
@@ -117,11 +119,10 @@ type CompatConnecting =
 impl Stream for QuicIncoming {
     type Item = Result<ListenerEvent<CompatConnecting>, QuicError>;
     fn poll_next(
-        mut self: std::pin::Pin<&mut Self>,
-        ctx: &mut std::task::Context,
-    ) -> std::task::Poll<Option<Self::Item>> {
+        mut self: Pin<&mut Self>,
+        ctx: &mut Context,
+    ) -> Poll<Option<Self::Item>> {
         use futures::compat::Future01CompatExt;
-        use std::{pin::Pin, task::Poll};
         match Pin::new(&mut self.incoming).poll_next(ctx) {
             Poll::Pending => Poll::Pending,
             Poll::Ready(Some(upgrade)) => {
