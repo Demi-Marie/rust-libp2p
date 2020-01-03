@@ -311,7 +311,7 @@ impl StreamMuxer for QuicMuxer {
         debug!("sending application packet");
         let mut inner = self.inner();
         ready!(inner.pre_application_io(cx))?;
-        drop(match inner.connection.write(*substream, buf) {
+        match inner.connection.write(*substream, buf) {
             Ok(bytes) => {
                 drop(inner.endpoint_channel.try_send(None));
                 drop(inner.waker.try_send(()));
@@ -327,8 +327,7 @@ impl StreamMuxer for QuicMuxer {
                 panic!("libp2p never uses a closed stream, so this cannot happen; qed")
             }
             Err(WriteError::Stopped(_)) => Ready(Err(std::io::ErrorKind::ConnectionAborted.into())),
-        });
-        panic!()
+        }
     }
 
     fn poll_outbound(
@@ -1311,12 +1310,12 @@ mod tests {
                         let mut muxer = upgrade.await.expect("upgrade failed");
                         log::debug!("upgrade succeeded");
                         let mut socket = muxer.next().await.expect("no incoming stream");
-                        log::warn!("writing data!");
-                        socket.write_all(&[0x1, 0x2, 0x3]).await.unwrap();
 
                         let mut buf = [0u8; 3];
                         socket.read_exact(&mut buf).await.unwrap();
                         assert_eq!(buf, [4, 5, 6]);
+                        log::warn!("writing data!");
+                        socket.write_all(&[0x1, 0x2, 0x3]).await.unwrap();
                     }
                     _ => unreachable!(),
                 }
@@ -1339,10 +1338,10 @@ mod tests {
                 muxer: connection.clone(),
             };
             log::warn!("have a new stream!");
+            stream.write_all(&[4u8, 5, 6]).await.unwrap();
             let mut buf = [0u8; 3];
             stream.read_exact(&mut buf).await.unwrap();
             assert_eq!(buf, [1u8, 2, 3]);
-            stream.write_all(&[4u8, 5, 6]).await.unwrap();
         });
     }
 
